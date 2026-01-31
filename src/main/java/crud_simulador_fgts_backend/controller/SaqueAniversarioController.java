@@ -1,7 +1,8 @@
-package controller;
+package crud_simulador_fgts_backend.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,14 +13,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import model.SaqueAniversario;
-import service.SaqueAniversarioService;
+import crud_simulador_fgts_backend.model.SaqueAniversario;
+import crud_simulador_fgts_backend.service.SaqueAniversarioService;
 
 @RestController
 @RequestMapping("/api/SaqueAniversario")
 @CrossOrigin
 public class SaqueAniversarioController {
 
+    @Autowired
     public SaqueAniversarioService service;
 
     @PostMapping

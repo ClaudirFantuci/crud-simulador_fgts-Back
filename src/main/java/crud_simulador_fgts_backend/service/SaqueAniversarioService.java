@@ -1,12 +1,15 @@
-package service;
+package crud_simulador_fgts_backend.service;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import model.SaqueAniversario;
-import repository.SaqueAniversarioRepository;
+import crud_simulador_fgts_backend.enums.FaixaSaldoFgts;
+import crud_simulador_fgts_backend.model.SaqueAniversario;
+import crud_simulador_fgts_backend.repository.SaqueAniversarioRepository;
 
 @Service
 public class SaqueAniversarioService {
@@ -15,7 +18,11 @@ public class SaqueAniversarioService {
     SaqueAniversarioRepository repository;
 
     public SaqueAniversario criar(SaqueAniversario saqueAniversario) {
-
+        FaixaSaldoFgts faixa = FaixaSaldoFgts.obterFaixa(saqueAniversario.getSaldoFgts());
+        BigDecimal valor = faixa.calcularValorSaque(saqueAniversario.getSaldoFgts());
+        saqueAniversario.setValorDisponivel(valor);
+        saqueAniversario.setFaixa(faixa);
+        saqueAniversario.setDataSimulacao(LocalDateTime.now());
         return repository.save(saqueAniversario);
     }
 
@@ -26,8 +33,7 @@ public class SaqueAniversarioService {
         saqueSalvo.setNome(dados.getNome());
         saqueSalvo.setSaldoFgts(dados.getSaldoFgts());
         saqueSalvo.setMesAniversario(dados.getMesAniversario());
-        saqueSalvo.setDataSimulacao(dados.getDataSimulacao());
-        return repository.save(saqueSalvo);
+        return criar(saqueSalvo);
     }
 
     public void excluir(Long id) {
@@ -36,6 +42,6 @@ public class SaqueAniversarioService {
     }
 
     public List<SaqueAniversario> listarTodos() {
-        return repository.findAllByOrderByIdDesc();
+        return repository.findAll();
     }
 }
