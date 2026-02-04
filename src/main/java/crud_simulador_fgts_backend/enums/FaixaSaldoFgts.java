@@ -18,7 +18,7 @@ public enum FaixaSaldoFgts {
 
     private final BigDecimal valorMinimo;
     private final BigDecimal valorMaximo;
-    private final BigDecimal aliquota;
+    public final BigDecimal aliquota;
     private final BigDecimal parcelaAdicional;
 
     public static FaixaSaldoFgts obterFaixa(BigDecimal saldo) {

@@ -23,9 +23,9 @@ public class SaqueAniversario {
     private Long id;
     private String nome;
     @Positive
-    private BigDecimal SaldoFgts;
+    private BigDecimal saldoFgts;
     private int mesAniversario;
     private BigDecimal valorDisponivel;
-    private FaixaSaldoFgts faixa;
+    private BigDecimal faixa;
     private LocalDateTime dataSimulacao;
 }

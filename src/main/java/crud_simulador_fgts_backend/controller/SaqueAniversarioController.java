@@ -18,7 +18,7 @@ import crud_simulador_fgts_backend.service.SaqueAniversarioService;
 
 @RestController
 @RequestMapping("/api/SaqueAniversario")
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000")
 public class SaqueAniversarioController {
 
     @Autowired

@@ -21,7 +21,7 @@ public class SaqueAniversarioService {
         FaixaSaldoFgts faixa = FaixaSaldoFgts.obterFaixa(saqueAniversario.getSaldoFgts());
         BigDecimal valor = faixa.calcularValorSaque(saqueAniversario.getSaldoFgts());
         saqueAniversario.setValorDisponivel(valor);
-        saqueAniversario.setFaixa(faixa);
+        saqueAniversario.setFaixa(faixa.aliquota);
         saqueAniversario.setDataSimulacao(LocalDateTime.now());
         return repository.save(saqueAniversario);
     }
