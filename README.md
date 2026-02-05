@@ -1,10 +1,10 @@
-# 💰 Simulador FGTS - Backend
+# Simulador FGTS - Backend
 
 API REST desenvolvida em Java com Spring Boot para gerenciar simulações de saque-aniversário do FGTS. Calcula automaticamente valores disponíveis baseados em faixas de saldo.
 
 ## Aplicação em Produção (Deploy)
 
-A versão completa da aplicação (Frontend integrado ao Backend) está disponível em produção:
+Observação: como o projeto utiliza serviços gratuitos de hospedagem (Railway, Render e Netlify), o backend pode apresentar cold start. Nos testes realizados, a primeira requisição pode levar até 5 minutos para responder. Após esse período inicial, a aplicação funciona normalmente, sem impactos no desempenho. A versão completa da aplicação (Frontend integrado ao Backend) está disponível em produção:
 
 🔗 **https://fgtssimulator.netlify.app/**
 
@@ -21,7 +21,7 @@ Sistema backend que fornece API REST para:
 -  Cálculo automático de alíquota e parcela adicional por faixa
 -  Registro de data/hora da simulação
 
-## 🚀 Tecnologias Utilizadas
+## Tecnologias Utilizadas
 
 - **Java 17**
 - **Spring Boot 4.0.2**
@@ -32,14 +32,14 @@ Sistema backend que fornece API REST para:
 - **Lombok** - Redução de boilerplate
 - **Maven** - Gerenciamento de dependências
 
-## 📦 Pré-requisitos
+## Pré-requisitos
 
 - [Java JDK 17](https://www.oracle.com/java/technologies/downloads/) ou superior
 - [Maven 3.8+](https://maven.apache.org/download.cgi)
 - [MySQL 8.0+](https://www.mysql.com/downloads/)
 - [Git](https://git-scm.com/)
 
-## 🔧 Instalação e Configuração
+## Instalação e Configuração
 
 ### 1. Clone o repositório
 
@@ -99,7 +99,7 @@ mvnw.cmd spring-boot:run
 
 A API estará disponível em `http://localhost:8080`
 
-## 📁 Estrutura do Projeto
+## Estrutura do Projeto
 
 ```
 crud-simulador_fgts-Back/
@@ -179,3 +179,4 @@ Este projeto está sob a licença MIT.
 - [Documentação Spring Boot](https://spring.io/projects/spring-boot)
 - [Documentação Spring Data JPA](https://spring.io/projects/spring-data-jpa)
 - [Informações sobre FGTS Saque-Aniversário](https://www.gov.br/trabalho-e-previdencia/pt-br/assuntos/fgts)
+
